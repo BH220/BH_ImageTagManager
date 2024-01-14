@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
@@ -33,11 +33,12 @@
                 <MenuItem Header="정보"/>
             </MenuItem>
         </Menu>
-        <GridSplitter Grid.Row="1" Grid.Column="1" Cursor="SizeWE" Width="4" Background="Red"
-                      HorizontalContentAlignment="Stretch"
-                      VerticalContentAlignment="Stretch"
+        <GridSplitter Grid.Row="1" Grid.Column="1"  Cursor="SizeWE" Width="3" 
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      ResizeDirection="Columns"
                       />
-        <View:FileExplorer Grid.Row="1" Grid.Column="0" />
+        <View:FileExplorer Grid.Row="1" Grid.Column="0" Width="Auto" Height="Auto" />
         <StatusBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
             <StatusBarItem>
                 <Label>정보표시1</Label>
@@ -48,7 +49,7 @@
             <StatusBarItem HorizontalAlignment="Right">
                 <StatusBar>
                     <StatusBarItem>
-                        <Label>상태표시</Label>
+                        <Label Name="lbLicenseAndTime"></Label>
                     </StatusBarItem>
                 </StatusBar>
             </StatusBarItem>
@@ -60,11 +61,11 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0">
-                <Button Content="asdf"></Button>
-                <Button Content="asdf"></Button>
+            <WrapPanel Grid.Row="0" Margin="2,2,2,2">
+                <Button Content="asdf" Width="30" Height="30"></Button>
+                <Button Content="asdf" Width="30" Height="30" Margin="5"></Button>
             </WrapPanel>
-            <ListView Grid.Row="1" Background="Aqua">                
+            <ListView Grid.Row="1" Background="Aqua" Margin="0,0,5,0">                
             </ListView>
             <StatusBar Grid.Row="2">
                 <StatusBarItem>

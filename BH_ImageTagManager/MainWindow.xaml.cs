@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace BH_ImageTagManager
 {
@@ -20,9 +21,24 @@ namespace BH_ImageTagManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer = null;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(1000);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lbLicenseAndTime.Content = string.Format("[{0}] {1}", "Free", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         }
     }
 }
