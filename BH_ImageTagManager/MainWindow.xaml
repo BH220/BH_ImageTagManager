@@ -1,0 +1,76 @@
+﻿<Window xmlns:View="clr-namespace:BH_ImageTagManager.View"  x:Class="BH_ImageTagManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BH_ImageTagManager"
+        mc:Ignorable="d"
+        Title="이미지 태그 매니저" Height="450" Width="800" MinHeight="300" MinWidth="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <MenuItem Header="프로그램">
+                <MenuItem Header="하위1"/>
+                <MenuItem Header="하위2"/>
+                <MenuItem Header="하위3"/>
+            </MenuItem>
+            <MenuItem Header="설정">
+                <MenuItem Header="설정1"/>
+                <MenuItem Header="설정2"/>
+                <MenuItem Header="설정3"/>
+            </MenuItem>
+            <MenuItem Header="도움말">
+                <MenuItem Header="도움말"/>
+                <MenuItem Header="정보"/>
+            </MenuItem>
+        </Menu>
+        <GridSplitter Grid.Row="1" Grid.Column="1" Cursor="SizeWE" Width="4" Background="Red"
+                      HorizontalContentAlignment="Stretch"
+                      VerticalContentAlignment="Stretch"
+                      />
+        <View:FileExplorer Grid.Row="1" Grid.Column="0" />
+        <StatusBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <StatusBarItem>
+                <Label>정보표시1</Label>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label>정보표시2</Label>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <StatusBar>
+                    <StatusBarItem>
+                        <Label>상태표시</Label>
+                    </StatusBarItem>
+                </StatusBar>
+            </StatusBarItem>
+        </StatusBar>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0">
+                <Button Content="asdf"></Button>
+                <Button Content="asdf"></Button>
+            </WrapPanel>
+            <ListView Grid.Row="1" Background="Aqua">                
+            </ListView>
+            <StatusBar Grid.Row="2">
+                <StatusBarItem>
+                    <Label>이미지 정보 표시</Label>
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>
